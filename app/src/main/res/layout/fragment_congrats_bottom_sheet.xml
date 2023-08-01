@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="700dp"
     android:background="@color/white"
+    app:circularflow_defaultRadius="10dp"
     tools:context=".CongratsBottomSheet">
 
     <LinearLayout
@@ -31,23 +32,22 @@
             android:src="@drawable/congrats" />
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/goHome"
-                android:layout_width="152dp"
-                android:layout_height="57dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/redbutton"
-                android:text="@string/go_to_home"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                tools:ignore="MissingConstraints"
-                android:gravity="center"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/goHome"
+            android:layout_width="152dp"
+            android:layout_height="57dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/redbutton"
+            android:gravity="center"
+            android:text="@string/go_to_home"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            tools:ignore="MissingConstraints" />
 
 
     </LinearLayout>
-
 
 
 </FrameLayout>

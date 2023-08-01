@@ -15,23 +15,23 @@ import com.galal.chef.databinding.FragmentSearchBinding
 class SearchFragment : Fragment() {
 
     lateinit var binding: FragmentSearchBinding
-    private val originalMenuFoodName = listOf("Burger", "sandwich", "Beef" , "Burger", "sandwich", "Beef",
-        "Burger", "sandwich", "Beef" , "Burger", "sandwich", "Beef")
+    private val originalMenuFoodName = listOf("Burger", "Salad", "Beef" , "Burger", "Salad", "Salmon"
+    ,"Burger", "Salad", "Beef" , "Burger", "Salad", "Salmon")
     private val originalPrice = listOf("100 EGP", "200 EGP", "150 EGP","100 EGP", "200 EGP", "150 EGP",
         "100 EGP", "200 EGP", "150 EGP","100 EGP", "200 EGP", "150 EGP")
     private val originalImage = listOf(
-        R.drawable.img,
-        R.drawable.img_1,
-        R.drawable.searcheng,
-        R.drawable.img,
-        R.drawable.img_1,
-        R.drawable.searcheng,
-        R.drawable.img,
-        R.drawable.img_1,
-        R.drawable.searcheng,
-        R.drawable.img,
-        R.drawable.img_1,
-        R.drawable.searcheng)
+        R.drawable.berger,
+        R.drawable.salad,
+        R.drawable.salamon,
+        R.drawable.berger,
+        R.drawable.salad,
+        R.drawable.salamon,
+        R.drawable.berger,
+        R.drawable.salad,
+        R.drawable.salamon,
+        R.drawable.berger,
+        R.drawable.salad,
+        R.drawable.salamon)
     private lateinit var adapter: MenuAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -31,23 +31,23 @@ class MenuBottomFragment : BottomSheetDialogFragment() {
 
         binding.backButton.setOnClickListener{ dismiss()}
 
-        val menuFoodName = listOf("Burger", "sandwich", "Beef" , "Burger", "sandwich", "Beef",
-            "Burger", "sandwich", "Beef" , "Burger", "sandwich", "Beef")
+        val menuFoodName = listOf("Burger", "Salad", "Beef" , "Burger", "Salad", "Salmon",
+            "Burger", "Salad", "Beef" , "Burger", "Salad", "Salmon")
         val menuPrice = listOf("100 EGP", "200 EGP", "150 EGP","100 EGP", "200 EGP", "150 EGP",
             "100 EGP", "200 EGP", "150 EGP","100 EGP", "200 EGP", "150 EGP")
         val cartImage = listOf(
-            R.drawable.img,
-            R.drawable.img_1,
-            R.drawable.searcheng,
-            R.drawable.img,
-            R.drawable.img_1,
-            R.drawable.searcheng,
-            R.drawable.img,
-            R.drawable.img_1,
-            R.drawable.searcheng,
-            R.drawable.img,
-            R.drawable.img_1,
-            R.drawable.searcheng)
+            R.drawable.berger,
+            R.drawable.salad,
+            R.drawable.salamon,
+            R.drawable.berger,
+            R.drawable.salad,
+            R.drawable.salamon,
+            R.drawable.berger,
+            R.drawable.salad,
+            R.drawable.salamon,
+            R.drawable.berger,
+            R.drawable.salad,
+            R.drawable.salamon)
         val adapter = MenuAdapter(ArrayList(menuFoodName),ArrayList(menuPrice),ArrayList(cartImage),requireContext())
         binding.recycleMenuItem.layoutManager = LinearLayoutManager(requireContext())
         binding.recycleMenuItem.adapter = adapter

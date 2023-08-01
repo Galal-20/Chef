@@ -30,15 +30,15 @@ class CartFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentCartBinding.inflate(inflater,container,false)
 
-        val cartFoodName = listOf("Burger", "sandwich", "Beef" , "Burger", "sandwich", "Beef")
+        val cartFoodName = listOf("Burger", "Salad", "Beef" , "Burger", "Salad", "Salmon")
         val cartItemPrice = listOf("100 EGP", "200 EGP", "150 EGP","100 EGP", "200 EGP", "150 EGP")
         val cartImage = listOf(
-            R.drawable.img,
-            R.drawable.img_1,
-            R.drawable.searcheng,
-            R.drawable.img,
-            R.drawable.img_1,
-            R.drawable.searcheng)
+            R.drawable.berger,
+            R.drawable.salad,
+            R.drawable.salamon,
+            R.drawable.berger,
+            R.drawable.salad,
+            R.drawable.salamon)
         val adapter = CartAdapter(ArrayList(cartFoodName),ArrayList(cartItemPrice),ArrayList(cartImage))
         binding.CartRecycleView.layoutManager = LinearLayoutManager(requireContext())
         binding.CartRecycleView.adapter = adapter

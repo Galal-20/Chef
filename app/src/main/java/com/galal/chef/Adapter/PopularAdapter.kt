@@ -52,7 +52,7 @@ class PopularAdapter (
         fun bind(item:String, price:String ,images:Int){
             binding.FoodName.text = item
             binding.price.text = price
-            imagesView.setImageResource(images)
+            imagesView.setBackgroundResource(images)
 
         }
     }

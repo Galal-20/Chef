@@ -14,7 +14,9 @@ import com.galal.chef.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import mumayank.com.airlocationlibrary.AirLocation
+import java.lang.Exception
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity(),AirLocation.Callback {
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -52,17 +54,22 @@ class MainActivity : AppCompatActivity(),AirLocation.Callback {
     }
 
     override fun onSuccess(locations: ArrayList<Location>) {
-        locations[0].accuracy
-        val lat = locations[0].latitude
-        val long = locations[0].longitude
-        val g = Geocoder(this)
-        val address = g.getFromLocation(lat,long,1)
-        address?.get(0).let {
-            binding.location.setText(it?.locality)
+        try {
+            locations[0].accuracy
+            val lat = locations[0].latitude
+            val long = locations[0].longitude
+            val g = Geocoder(this)
+            val address = g.getFromLocation(lat,long,2)
+            address?.get(0).let {
+                binding.location.text = it?.locality
+            }
+        }catch (e : Exception){
+            Snackbar.make(binding.location,"${e.message}", Snackbar.LENGTH_SHORT).show()
         }
+
     }
     override fun onFailure(locationFailedEnum: AirLocation.LocationFailedEnum) {
-        Snackbar.make(binding.location,"Check your permissions", Snackbar.LENGTH_SHORT).show()
+        Snackbar.make(binding.location,"The server not response,Try again later", Snackbar.LENGTH_SHORT).show()
     }
 
     @Deprecated("Deprecated in Java")

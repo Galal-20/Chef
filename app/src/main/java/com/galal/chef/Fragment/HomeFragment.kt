@@ -45,9 +45,9 @@ class HomeFragment : Fragment() {
 
         val imageList = ArrayList<SlideModel>()
 
-        imageList.add(SlideModel(R.drawable.img,ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.salad,ScaleTypes.FIT))
         imageList.add(SlideModel(R.drawable.img_1,ScaleTypes.FIT))
-        imageList.add(SlideModel(R.drawable.searcheng,ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.salad,ScaleTypes.FIT))
 
         val imageSlider = binding.imageSlider
         imageSlider.setImageList(imageList)
@@ -62,15 +62,15 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(),"Select image $position",Toast.LENGTH_SHORT).show()
             }
         })
-        val foodName = listOf("Burger", "sandwich", "Beef" , "Burger", "sandwich", "Beef")
+        val foodName = listOf("Burger", "Salad", "Beef" , "Burger", "Salad", "Salmon")
         val price = listOf("100 EGP", "200 EGP", "150 EGP","100 EGP", "200 EGP", "150 EGP")
         val populerFoodImage = listOf(
-            R.drawable.img,
-            R.drawable.img_1,
-            R.drawable.searcheng,
-            R.drawable.img,
-            R.drawable.img_1,
-            R.drawable.searcheng)
+            R.drawable.berger,
+            R.drawable.salad,
+            R.drawable.salamon,
+            R.drawable.berger,
+            R.drawable.salad,
+            R.drawable.salamon)
         val adapter = PopularAdapter(foodName,price,populerFoodImage,requireContext())
         binding.recycle.layoutManager = LinearLayoutManager(requireContext())
         binding.recycle.adapter = adapter
