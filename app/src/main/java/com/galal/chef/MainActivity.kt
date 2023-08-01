@@ -1,5 +1,6 @@
 package com.galal.chef
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.location.Geocoder
 import android.location.Location
@@ -14,7 +15,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import mumayank.com.airlocationlibrary.AirLocation
 
-@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity(),AirLocation.Callback {
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity(),AirLocation.Callback {
     private lateinit var location: AirLocation
     lateinit var navController:NavController
     lateinit var bottomNave:BottomNavigationView
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -35,9 +36,15 @@ class MainActivity : AppCompatActivity(),AirLocation.Callback {
             val bottomSheetDialog = NotificationBottomFragment()
             bottomSheetDialog.show(supportFragmentManager,"TesT")
         }
-
-
-    }
+        /*binding.navigationBar.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.historyFragment ->{
+                    binding.explore.text = "Your Old Order"
+                }
+            }
+            return@setOnItemSelectedListener true
+        }*/
+        }
 
     private fun getLocation(){
         location = AirLocation(this,this,false,0,"")
